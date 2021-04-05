@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tourist-vouchers>
+    <tourist-voucher id="BLR">
+        <type>weekend-tour</type>
+        <travel>
+            <country name="Belarus"/>
+            <city name="Vitebsk"/>
+        </travel>
+        <when>
+            <booking-date>10.04.21</booking-date>
+            <departure-date>17.04.21</departure-date>
+            <arrival-date>18.04.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>2</number-days>
+            <number-nights>1</number-nights>
+        </number-days>
+        <transport>train</transport>
+        <hotel-characteristic>
+            <number-of-stars>4</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>false</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>false</balcony>
+            <wi-fi>true</wi-fi>
+            <view>
+                <true kind-of-view="Summer amphitheater"/>
+            </view>
+        </hotel-characteristic>
+        <cost currency="BYN">240.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="BLR">
+        <type>weekend-tour</type>
+        <travel>
+            <country name="Belarus"/>
+            <city name="Gomel"/>
+        </travel>
+        <when>
+            <booking-date>15.04.21</booking-date>
+            <departure-date>17.04.21</departure-date>
+            <arrival-date>18.04.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>2</number-days>
+            <number-nights>1</number-nights>
+        </number-days>
+        <transport>train</transport>
+        <hotel-characteristic>
+            <number-of-stars>2</number-of-stars>
+            <types-of-accommodation-and-meals>ob</types-of-accommodation-and-meals>
+            <type-of-hotel-room>hostel</type-of-hotel-room>
+            <tv>false</tv>
+            <air-conditioning>false</air-conditioning>
+            <balcony>false</balcony>
+            <wi-fi>true</wi-fi>
+            <view>
+                <true kind-of-view="Summer amphitheater"/>
+            </view>
+        </hotel-characteristic>
+        <cost currency="BYN">75.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="BLR">
+        <type>weekend-tour</type>
+        <travel>
+            <country name="Belarus"/>
+            <city name="Minsk"/>
+        </travel>
+        <when>
+            <booking-date>20.04.21</booking-date>
+            <departure-date>23.04.21</departure-date>
+            <arrival-date>25.04.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>3</number-days>
+            <number-nights>2</number-nights>
+        </number-days>
+        <transport>train</transport>
+        <hotel-characteristic>
+            <number-of-stars>4</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>hostel</type-of-hotel-room>
+            <tv>true</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>false</balcony>
+            <wi-fi>true</wi-fi>
+            <view>
+                <false kind-of-view=""/>
+            </view>
+        </hotel-characteristic>
+        <cost currency="BYN">160.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="BLR">
+        <type>weekend-tour</type>
+        <travel>
+            <country name="Belarus"/>
+            <city name="Grodno"/>
+        </travel>
+        <when>
+            <booking-date>02.04.21</booking-date>
+            <departure-date>10.04.21</departure-date>
+            <arrival-date>11.04.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>2</number-days>
+            <number-nights>1</number-nights>
+        </number-days>
+        <transport>bus</transport>
+        <hotel-characteristic>
+            <number-of-stars>3</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>sng</type-of-hotel-room>
+            <tv>true</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>false</balcony>
+            <wi-fi>true</wi-fi>
+            <view>
+                <false kind-of-view=""/>
+            </view>
+        </hotel-characteristic>
+        <cost currency="BYN">220.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="RUS">
+        <type>weekend-tour</type>
+        <travel>
+            <country name="Russia"/>
+            <city name="St.Petersburg"/>
+        </travel>
+        <when>
+            <booking-date>01.03.21</booking-date>
+            <departure-date>16.04.21</departure-date>
+            <arrival-date>18.04.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>3</number-days>
+            <number-nights>2</number-nights>
+        </number-days>
+        <transport>train</transport>
+        <hotel-characteristic>
+            <number-of-stars>4</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>sgl</type-of-hotel-room>
+            <tv>false</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>false</balcony>
+            <wi-fi>true</wi-fi>
+            <view>
+                <true kind-of-view="Neva River"/>
+            </view>
+        </hotel-characteristic>
+        <cost currency="USD">150.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="LAT">
+        <type>weekend-tour</type>
+        <travel>
+            <country name="Latvia"/>
+            <city name="Riga"/>
+        </travel>
+        <when>
+            <booking-date>02.04.21</booking-date>
+            <departure-date>10.07.21</departure-date>
+            <arrival-date>16.07.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>7</number-days>
+            <number-nights>6</number-nights>
+        </number-days>
+        <transport>train</transport>
+        <hotel-characteristic>
+            <number-of-stars>4</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>false</tv>
+            <air-conditioning>false</air-conditioning>
+            <balcony>false</balcony>
+            <view>
+                <false kind-of-view=""/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="USD">700.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="CZE">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="Czech"/>
+            <city name="Prague"/>
+        </travel>
+        <when>
+            <booking-date>05.04.21</booking-date>
+            <departure-date>10.07.21</departure-date>
+            <arrival-date>24.07.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>14</number-days>
+            <number-nights>13</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>5</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>true</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>false</balcony>
+            <view>
+                <false kind-of-view=""/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="EUR">1500.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="GRE">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="Greece"/>
+            <city name="Athens"/>
+        </travel>
+        <when>
+            <booking-date>10.05.21</booking-date>
+            <departure-date>10.08.21</departure-date>
+            <arrival-date>30.08.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>20</number-days>
+            <number-nights>19</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>5</number-of-stars>
+            <types-of-accommodation-and-meals>al</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>true</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>true</balcony>
+            <view>
+                <true kind-of-view="sea"/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="EUR">3700.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="FRA">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="France"/>
+            <city name="Paris"/>
+        </travel>
+        <when>
+            <booking-date>02.04.21</booking-date>
+            <departure-date>17.07.21</departure-date>
+            <arrival-date>30.07.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>14</number-days>
+            <number-nights>13</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>5</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>true</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>true</balcony>
+            <view>
+                <true kind-of-view="the Eiffel Tower"/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="EUR">4000.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="FIN">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="Finland"/>
+            <city name="Helsinki"/>
+        </travel>
+        <when>
+            <booking-date>13.04.21</booking-date>
+            <departure-date>12.09.21</departure-date>
+            <arrival-date>18.09.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>7</number-days>
+            <number-nights>6</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>5</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>true</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>false</balcony>
+            <view>
+                <false kind-of-view=""/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="USD">2000.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="PRT">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="Portugal"/>
+            <city name="Lisbon"/>
+        </travel>
+        <when>
+            <booking-date>15.05.21</booking-date>
+            <departure-date>20.06.21</departure-date>
+            <arrival-date>29.07.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>10</number-days>
+            <number-nights>9</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>5</number-of-stars>
+            <types-of-accommodation-and-meals>hb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>true</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>true</balcony>
+            <view>
+                <true kind-of-view="garden"/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="EUR">4100.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="GBR">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="Great Britain"/>
+            <city name="London"/>
+        </travel>
+        <when>
+            <booking-date>02.04.21</booking-date>
+            <departure-date>01.10.21</departure-date>
+            <arrival-date>13.10.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>13</number-days>
+            <number-nights>12</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>3</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>false</tv>
+            <air-conditioning>false</air-conditioning>
+            <balcony>true</balcony>
+            <view>
+                <false kind-of-view=""/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="GBP">3700.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="ESP">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="Spain"/>
+            <city name="Barcelona"/>
+        </travel>
+        <when>
+            <booking-date>3.04.21</booking-date>
+            <departure-date>01.08.21</departure-date>
+            <arrival-date>11.08.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>11</number-days>
+            <number-nights>10</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>4</number-of-stars>
+            <types-of-accommodation-and-meals>ob</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>false</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>false</balcony>
+            <view>
+                <true kind-of-view="sea"/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="EUR">2000.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="AUT">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="Austria"/>
+            <city name="Vienna"/>
+        </travel>
+        <when>
+            <booking-date>30.04.21</booking-date>
+            <departure-date>10.08.21</departure-date>
+            <arrival-date>16.08.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>7</number-days>
+            <number-nights>6</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>4</number-of-stars>
+            <types-of-accommodation-and-meals>ob</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>false</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>false</balcony>
+            <view>
+                <false kind-of-view=""/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="EUR">1700.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="DNK">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="Denmark"/>
+            <city name="Stockholm"/>
+        </travel>
+        <when>
+            <booking-date>29.04.21</booking-date>
+            <departure-date>01.08.21</departure-date>
+            <arrival-date>08.08.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>8</number-days>
+            <number-nights>7</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>5</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>false</tv>
+            <air-conditioning>true</air-conditioning>
+            <balcony>true</balcony>
+            <view>
+                <false kind-of-view=""/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="EUR">3000.00</cost>
+    </tourist-voucher>
+    <tourist-voucher id="NDL">
+        <type>vacation-tour</type>
+        <travel>
+            <country name="Netherlands"/>
+            <city name="Amsterdam"/>
+        </travel>
+        <when>
+            <booking-date>06.04.21</booking-date>
+            <departure-date>01.09.21</departure-date>
+            <arrival-date>12.09.21</arrival-date>
+        </when>
+        <number-days>
+            <number-days>12</number-days>
+            <number-nights>11</number-nights>
+        </number-days>
+        <transport>airplane</transport>
+        <hotel-characteristic>
+            <number-of-stars>3</number-of-stars>
+            <types-of-accommodation-and-meals>bb</types-of-accommodation-and-meals>
+            <type-of-hotel-room>dbl</type-of-hotel-room>
+            <tv>false</tv>
+            <air-conditioning>false</air-conditioning>
+            <balcony>false</balcony>
+            <view>
+                <false kind-of-view=""/>
+            </view>
+            <wi-fi>true</wi-fi>
+        </hotel-characteristic>
+        <cost currency="EUR">1500.00</cost>
+    </tourist-voucher>
+</tourist-vouchers>
