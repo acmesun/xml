@@ -1,1 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tourist-vouchers">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="tourist-voucher" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="tourist-voucher">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="city" type="xs:string"/>
+                <xs:element name="departure-date" type="xs:date"/>
+                <xs:element name="number-days" type="xs:positiveInteger"/>
+                <xs:element name="transport" type="xs:string"/>
+                <xs:element ref="hotel-characteristic"/>
+                <xs:element ref="cost"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+            <xs:attribute name="average-rating" type="xs:integer" use="optional" default="5"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="hotel-characteristic">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element name="number-of-stars" type="xs:positiveInteger"/>
+                <xs:element ref="types-of-accommodation-and-meals"/>
+                <xs:element ref="type-of-hotel-room"/>
+                <xs:element name="tv" type="xs:boolean"/>
+                <xs:element name="air-conditioning" type="xs:boolean"/>
+                <xs:element name="balcony" type="xs:boolean"/>
+                <xs:element name="wi-fi" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="types-of-accommodation-and-meals">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="bb"/>
+                <xs:enumeration value="ob"/>
+                <xs:enumeration value="al"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="type-of-hotel-room">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="sng"/>
+                <xs:enumeration value="dbl"/>
+                <xs:enumeration value="hostel"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="cost">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="currency"/>
+                <xs:element name="value" type="xs:decimal"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="currency">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="USD"/>
+                <xs:enumeration value="EUR"/>
+                <xs:enumeration value="BYN"/>
+                <xs:enumeration value="GBP"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>
