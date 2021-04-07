@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tourist-vouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:noNamespaceSchemaLocation="voucher.xsd">
-    <tourist-voucher id="BLR-V" average-rating="8">
-        <type>weekend-tour</type>
+    <weekend-tour id="BLR-V" average-rating="8">
         <city>Vitebsk</city>
         <departure-date>2021-04-10</departure-date>
         <number-days>2</number-days>
@@ -20,9 +19,9 @@
             <currency>BYN</currency>
             <value>200</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="BLR1">
-        <type>weekend-tour</type>
+        <bikeTour>false</bikeTour>
+    </weekend-tour>
+    <weekend-tour id="BLR1">
         <city>Gomel</city>
         <departure-date>2021-04-17</departure-date>
         <number-days>2</number-days>
@@ -40,9 +39,9 @@
             <currency>BYN</currency>
             <value>75.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="BLR2">
-        <type>weekend-tour</type>
+        <bikeTour>true</bikeTour>
+    </weekend-tour>
+    <weekend-tour id="BLR2">
         <city>Minsk</city>
         <departure-date>2021-04-23</departure-date>
         <number-days>3</number-days>
@@ -60,9 +59,9 @@
             <currency>BYN</currency>
             <value>160.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="BLR3">
-        <type>weekend-tour</type>
+        <bikeTour>false</bikeTour>
+    </weekend-tour>
+    <weekend-tour id="BLR3">
         <city>Mogilev</city>
         <departure-date>2021-04-15</departure-date>
         <number-days>2</number-days>
@@ -80,10 +79,10 @@
             <currency>BYN</currency>
             <value>180.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="RUS" average-rating="7">
-        <type>weekend-tour</type>
-        <city>St.Petersburg</city>
+        <bikeTour>false</bikeTour>
+    </weekend-tour>
+    <weekend-tour id="RUS" average-rating="7">
+        <city>Moscow</city>
         <departure-date>2021-05-11</departure-date>
         <number-days>3</number-days>
         <transport>train</transport>
@@ -100,9 +99,9 @@
             <currency>USD</currency>
             <value>300.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="LAT" average-rating="4">
-        <type>weekend-tour</type>
+        <bikeTour>true</bikeTour>
+    </weekend-tour>
+    <vacation-tour id="LAT" average-rating="4">
         <city>Riga</city>
         <departure-date>2021-05-03</departure-date>
         <number-days>7</number-days>
@@ -120,9 +119,9 @@
             <currency>USD</currency>
             <value>700.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="CZE" average-rating="8">
-        <type>vacation-tour</type>
+        <visa>true</visa>
+    </vacation-tour>
+    <vacation-tour id="CZE" average-rating="8">
         <city>Prague</city>
         <departure-date>2021-05-12</departure-date>
         <number-days>14</number-days>
@@ -140,10 +139,10 @@
             <currency>EUR</currency>
             <value>1500.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="GRE">
-        <type>vacation-tour</type>
-        <city>Athens</city>
+        <visa>true</visa>
+    </vacation-tour>
+    <vacation-tour id="TUN">
+        <city>Tunis</city>
         <departure-date>2021-07-02</departure-date>
         <number-days>20</number-days>
         <transport>airplane</transport>
@@ -160,9 +159,9 @@
             <currency>USD</currency>
             <value>3700.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="FRA" average-rating="9">
-        <type>vacation-tour</type>
+        <visa>false</visa>
+    </vacation-tour>
+    <vacation-tour id="FRA" average-rating="9">
         <city>Paris</city>
         <departure-date>2021-07-06</departure-date>
         <number-days>14</number-days>
@@ -180,9 +179,9 @@
             <currency>EUR</currency>
             <value>3500.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="FIN" average-rating="6">
-        <type>vacation-tour</type>
+        <visa>false</visa>
+    </vacation-tour>
+    <vacation-tour id="FIN" average-rating="6">
         <city>Helsinki</city>
         <departure-date>2021-08-30</departure-date>
         <number-days>7</number-days>
@@ -200,9 +199,9 @@
             <currency>EUR</currency>
             <value>3500.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="PRT">
-        <type>vacation-tour</type>
+        <visa>true</visa>
+    </vacation-tour>
+    <vacation-tour id="PRT">
         <city>Lisbon</city>
         <departure-date>2021-07-10</departure-date>
         <number-days>10</number-days>
@@ -220,9 +219,9 @@
             <currency>EUR</currency>
             <value>4100.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="GBR">
-        <type>vacation-tour</type>
+        <visa>true</visa>
+    </vacation-tour>
+    <vacation-tour id="GBR">
         <city>London</city>
         <departure-date>2021-09-01</departure-date>
         <number-days>13</number-days>
@@ -240,9 +239,9 @@
             <currency>GBP</currency>
             <value>3200.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="ESP">
-        <type>vacation-tour</type>
+        <visa>true</visa>
+    </vacation-tour>
+    <vacation-tour id="ESP">
         <city>Barcelona</city>
         <departure-date>2021-10-12</departure-date>
         <number-days>11</number-days>
@@ -260,10 +259,10 @@
             <currency>EUR</currency>
             <value>2900.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="AUT">
-        <type>vacation-tour</type>
-        <city>Vienna</city>
+        <visa>true</visa>
+    </vacation-tour>
+    <vacation-tour id="UKR">
+        <city>Kiev</city>
         <departure-date>2021-05-25</departure-date>
         <number-days>7</number-days>
         <transport>airplane</transport>
@@ -278,11 +277,11 @@
         </hotel-characteristic>
         <cost>
             <currency>EUR</currency>
-            <value>2950.00</value>
+            <value>1350.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="NDL">
-        <type>vacation-tour</type>
+        <visa>false</visa>
+    </vacation-tour>
+    <vacation-tour id="NDL">
         <city>Amsterdam</city>
         <departure-date>2021-08-16</departure-date>
         <number-days>12</number-days>
@@ -300,8 +299,9 @@
             <currency>EUR</currency>
             <value>3600.00</value>
         </cost>
-    </tourist-voucher>
-    <tourist-voucher id="POL">
+        <visa>true</visa>
+    </vacation-tour>
+    <vacation-tour id="POL">
         <type>vacation-tour</type>
         <city>Warsaw</city>
         <departure-date>2021-05-01</departure-date>
@@ -320,5 +320,6 @@
             <currency>EUR</currency>
             <value>1520.00</value>
         </cost>
-    </tourist-voucher>
+        <visa>true</visa>
+    </vacation-tour>
 </tourist-vouchers>

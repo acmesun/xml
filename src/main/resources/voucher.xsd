@@ -3,30 +3,17 @@
     <xs:element name="tourist-vouchers">
         <xs:complexType mixed="true">
             <xs:sequence>
-                <xs:element ref="tourist-voucher" maxOccurs="unbounded"/>
+                <xs:element ref="weekend-tour" maxOccurs="unbounded"/>
+                <xs:element ref="vacation-tour" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
-    <xs:element name="tourist-voucher">
-        <xs:complexType mixed="true">
-            <xs:sequence>
-                <xs:element name="type" type="xs:string"/>
-                <xs:element name="city" type="xs:string"/>
-                <xs:element name="departure-date" type="xs:date"/>
-                <xs:element name="number-days" type="xs:positiveInteger"/>
-                <xs:element name="transport" type="xs:string"/>
-                <xs:element ref="hotel-characteristic"/>
-                <xs:element ref="cost"/>
-            </xs:sequence>
-            <xs:attribute name="id" type="xs:ID" use="required"/>
-            <xs:attribute name="average-rating" type="xs:integer" use="optional" default="5"/>
-        </xs:complexType>
-    </xs:element>
+    <xs:element name="weekend-tour" type="weekend-tour"/>
+    <xs:element name="vacation-tour" type="vacation-tour"/>
     <xs:element name="hotel-characteristic">
         <xs:complexType mixed="true">
             <xs:sequence>
-                <xs:element name="number-of-stars" type="xs:positiveInteger"/>
+                <xs:element ref="number-of-stars"/>
                 <xs:element ref="types-of-accommodation-and-meals"/>
                 <xs:element ref="type-of-hotel-room"/>
                 <xs:element name="tv" type="xs:boolean"/>
@@ -35,6 +22,7 @@
                 <xs:element name="wi-fi" type="xs:boolean"/>
             </xs:sequence>
         </xs:complexType>
+
     </xs:element>
     <xs:element name="types-of-accommodation-and-meals">
         <xs:simpleType>
@@ -72,4 +60,50 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
+    <xs:element name="number-of-stars">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1"/>
+                <xs:maxInclusive value="5"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="city">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z][a-z]+"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:complexType name="tourist-voucher" mixed="true">
+        <xs:sequence>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element ref="city"/>
+            <xs:element name="departure-date" type="xs:date"/>
+            <xs:element name="number-days" type="xs:positiveInteger"/>
+            <xs:element name="transport" type="xs:string"/>
+            <xs:element ref="hotel-characteristic"/>
+            <xs:element ref="cost"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="average-rating" type="xs:integer" use="optional" default="5"/>
+    </xs:complexType>
+    <xs:complexType name="vacation-tour">
+        <xs:complexContent>
+            <xs:extension base="tourist-voucher">
+                <xs:sequence>
+                    <xs:element name="visa" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="weekend-tour">
+        <xs:complexContent>
+            <xs:extension base="tourist-voucher">
+                <xs:sequence>
+                    <xs:element name="bikeTour" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 </xs:schema>
