@@ -13,12 +13,27 @@ public class WeekendTour extends TouristVoucher {
         this.bikeTour = bikeTour;
     }
 
-    public WeekendTour(int id, String averageRating, String city, LocalDate departureDate, int numberOfDays, String transport, Hotel hotel, Cost cost, boolean bikeTour) {
+    public WeekendTour(String id, String averageRating, String city, LocalDate departureDate, int numberOfDays, String transport, Hotel hotel, Cost cost, boolean bikeTour) {
         super(id, averageRating, city, departureDate, numberOfDays, transport, hotel, cost);
         this.bikeTour = bikeTour;
     }
 
     public WeekendTour() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "WeekendTour{" +
+                "id='" + id + '\'' +
+                ", averageRating='" + averageRating + '\'' +
+                ", city='" + city + '\'' +
+                ", departureDate=" + departureDate +
+                ", numberOfDays=" + numberOfDays +
+                ", transport='" + transport + '\'' +
+                ", hotel=" + hotel +
+                ", cost=" + cost +
+                ", bikeTour=" + bikeTour +
+                '}';
     }
 }

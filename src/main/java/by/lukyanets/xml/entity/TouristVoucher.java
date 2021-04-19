@@ -9,19 +9,33 @@ import java.time.LocalDate;
 
 
 public abstract class TouristVoucher {
-    private int id;
-    private String averageRating;
-    private String city;
-    private LocalDate departureDate;
-    private int numberOfDays;
-    private String transport;
-    private Hotel hotel = new Hotel();
-    private Cost cost = new Cost();
+    public String id;
+    public String averageRating;
+    public String city;
+    public LocalDate departureDate;
+    public int numberOfDays;
+    public String transport;
+    public Hotel hotel = new Hotel();
+    public Cost cost = new Cost();
+
+    @Override
+    public String toString() {
+        return "TouristVoucher{" +
+                "id='" + id + '\'' +
+                ", averageRating='" + averageRating + '\'' +
+                ", city='" + city + '\'' +
+                ", departureDate=" + departureDate +
+                ", numberOfDays=" + numberOfDays +
+                ", transport='" + transport + '\'' +
+                ", hotel=" + hotel +
+                ", cost=" + cost +
+                '}';
+    }
 
     public TouristVoucher() {
     }
 
-    public TouristVoucher(int id, String averageRating, String city, LocalDate departureDate, int numberOfDays, String transport, Hotel hotel, Cost cost) {
+    public TouristVoucher(String id, String averageRating, String city, LocalDate departureDate, int numberOfDays, String transport, Hotel hotel, Cost cost) {
         this.id = id;
         this.averageRating = averageRating;
         this.city = city;
@@ -33,11 +47,11 @@ public abstract class TouristVoucher {
     }
 
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -98,13 +112,26 @@ public abstract class TouristVoucher {
     }
 
     public class Hotel {
-        private int numberOfStars;
-        private AccommodationAndMeals type;
-        private HotelRoom hotelRoom;
-        private boolean tv;
-        private boolean airConditioning;
-        private boolean balcony;
-        private boolean wi_fi;
+        public int numberOfStars;
+        public AccommodationAndMeals type;
+        public HotelRoom hotelRoom;
+        public boolean tv;
+        public boolean airConditioning;
+        public boolean balcony;
+        public boolean wi_fi;
+
+        @Override
+        public String toString() {
+            return "Hotel{" +
+                    "numberOfStars=" + numberOfStars +
+                    ", type=" + type +
+                    ", hotelRoom=" + hotelRoom +
+                    ", tv=" + tv +
+                    ", airConditioning=" + airConditioning +
+                    ", balcony=" + balcony +
+                    ", wi_fi=" + wi_fi +
+                    '}';
+        }
 
         public Hotel() {
         }
@@ -177,8 +204,16 @@ public abstract class TouristVoucher {
     }
 
     public class Cost {
-        private Currency currency;
-        private int value;
+        public Currency currency;
+        public double value;
+
+        @Override
+        public String toString() {
+            return "Cost{" +
+                    "currency=" + currency +
+                    ", value=" + value +
+                    '}';
+        }
 
         public Cost() {
         }
@@ -196,11 +231,11 @@ public abstract class TouristVoucher {
             this.currency = currency;
         }
 
-        public int getValue() {
+        public double getValue() {
             return value;
         }
 
-        public void setValue(int value) {
+        public void setValue(double value) {
             this.value = value;
         }
     }

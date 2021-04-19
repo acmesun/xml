@@ -10,7 +10,7 @@ public enum VoucherXmlTag {
     DEPARTURE_DATE("departure-date"),
     NUMBER_DAYS("number-days"),
     TRANSPORT("transport"),
-    HOTEL_CHARACTERISTICS("hotel-characteristics"),
+    HOTEL_CHARACTERISTIC("hotel-characteristic"),
     NUMBER_OF_STARS("number-of-stars"),
     TYPES_OF_ACCOMMODATION_AND_MEALS("types-of-accommodation-and-meals"),
     TYPE_OF_HOTEL_ROOM("type-of-hotel-room"),

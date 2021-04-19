@@ -13,7 +13,7 @@ public class VacationTour extends TouristVoucher {
         this.visa = visa;
     }
 
-    public VacationTour(int id, String averageRating, String city, LocalDate departureDate, int numberOfDays, String transport, Hotel hotel, Cost cost, boolean visa) {
+    public VacationTour(String id, String averageRating, String city, LocalDate departureDate, int numberOfDays, String transport, Hotel hotel, Cost cost, boolean visa) {
         super(id, averageRating, city, departureDate, numberOfDays, transport, hotel, cost);
         this.visa = visa;
     }
@@ -22,6 +22,18 @@ public class VacationTour extends TouristVoucher {
 
     }
 
-
-
+    @Override
+    public String toString() {
+        return "VacationTour{" +
+                "id='" + id + '\'' +
+                ", averageRating='" + averageRating + '\'' +
+                ", city='" + city + '\'' +
+                ", departureDate=" + departureDate +
+                ", numberOfDays=" + numberOfDays +
+                ", transport='" + transport + '\'' +
+                ", hotel=" + hotel +
+                ", cost=" + cost +
+                ", visa=" + visa +
+                '}';
+    }
 }

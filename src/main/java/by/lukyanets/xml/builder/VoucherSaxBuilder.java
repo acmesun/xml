@@ -37,7 +37,7 @@ public class VoucherSaxBuilder {
         } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
+        vouchers = handler.getVouchers();
     }
-
-
 }
+

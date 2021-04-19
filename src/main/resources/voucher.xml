@@ -19,7 +19,7 @@
             <currency>BYN</currency>
             <value>200</value>
         </cost>
-        <bikeTour>false</bikeTour>
+        <bike-tour>false</bike-tour>
     </weekend-tour>
     <weekend-tour id="BLR1">
         <city>Gomel</city>
@@ -39,7 +39,7 @@
             <currency>BYN</currency>
             <value>75.00</value>
         </cost>
-        <bikeTour>true</bikeTour>
+        <bike-tour>true</bike-tour>
     </weekend-tour>
     <weekend-tour id="BLR2">
         <city>Minsk</city>
@@ -59,7 +59,7 @@
             <currency>BYN</currency>
             <value>160.00</value>
         </cost>
-        <bikeTour>false</bikeTour>
+        <bike-tour>false</bike-tour>
     </weekend-tour>
     <weekend-tour id="BLR3">
         <city>Mogilev</city>
@@ -79,7 +79,7 @@
             <currency>BYN</currency>
             <value>180.00</value>
         </cost>
-        <bikeTour>false</bikeTour>
+        <bike-tour>false</bike-tour>
     </weekend-tour>
     <weekend-tour id="RUS" average-rating="7">
         <city>Moscow</city>
@@ -99,7 +99,7 @@
             <currency>USD</currency>
             <value>300.00</value>
         </cost>
-        <bikeTour>true</bikeTour>
+        <bike-tour>true</bike-tour>
     </weekend-tour>
     <vacation-tour id="LAT" average-rating="4">
         <city>Riga</city>
@@ -302,7 +302,6 @@
         <visa>true</visa>
     </vacation-tour>
     <vacation-tour id="POL">
-        <type>vacation-tour</type>
         <city>Warsaw</city>
         <departure-date>2021-05-01</departure-date>
         <number-days>10</number-days>

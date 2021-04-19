@@ -101,7 +101,7 @@
         <xs:complexContent>
             <xs:extension base="tourist-voucher">
                 <xs:sequence>
-                    <xs:element name="bikeTour" type="xs:boolean"/>
+                    <xs:element name="bike-tour" type="xs:boolean"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
