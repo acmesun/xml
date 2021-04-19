@@ -1,7 +1,6 @@
 package by.lukyanets.xml.builder;
 
-import by.lukyanets.xml.entity.Voucher;
-import by.lukyanets.xml.exception.VoucherErrorHandler;
+import by.lukyanets.xml.entity.TouristVoucher;
 import by.lukyanets.xml.handler.VoucherHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -12,12 +11,12 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 import java.util.Set;
 
-public class SaxVoucherBuilder {
-    private Set<Voucher> vouchers;
+public class VoucherSaxBuilder {
+    private Set<TouristVoucher> vouchers;
     private VoucherHandler handler = new VoucherHandler();
     private XMLReader reader;
 
-    public SaxVoucherBuilder() {
+    public VoucherSaxBuilder() {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             SAXParser saxParser = factory.newSAXParser();
@@ -25,20 +24,20 @@ public class SaxVoucherBuilder {
         } catch (SAXException | ParserConfigurationException e) {
             e.printStackTrace();
         }
-        reader.setErrorHandler(new VoucherErrorHandler());
         reader.setContentHandler(handler);
     }
 
-    public Set<Voucher> getVouchers() {
+    public Set<TouristVoucher> getVouchers() {
         return vouchers;
     }
 
-    public void buildSetVouchers(String fileName) {
+    public void buildSetVouchers(String filename) {
         try {
-            reader.parse(fileName);
+            reader.parse(filename);
         } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
-
     }
+
+
 }

@@ -8,8 +8,9 @@ import by.lukyanets.xml.data.AccommodationAndMeals;
 import java.time.LocalDate;
 
 
-public abstract class Voucher {
+public abstract class TouristVoucher {
     private int id;
+    private String averageRating;
     private String city;
     private LocalDate departureDate;
     private int numberOfDays;
@@ -17,16 +18,35 @@ public abstract class Voucher {
     private Hotel hotel = new Hotel();
     private Cost cost = new Cost();
 
-    public Voucher() {
+    public TouristVoucher() {
     }
 
-    public Voucher(String city, LocalDate departureDate, int numberOfDays, String transport, Hotel hotel, Cost cost) {
+    public TouristVoucher(int id, String averageRating, String city, LocalDate departureDate, int numberOfDays, String transport, Hotel hotel, Cost cost) {
+        this.id = id;
+        this.averageRating = averageRating;
         this.city = city;
         this.departureDate = departureDate;
         this.numberOfDays = numberOfDays;
         this.transport = transport;
         this.hotel = hotel;
         this.cost = cost;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(String averageRating) {
+        this.averageRating = averageRating;
     }
 
     public String getCity() {
@@ -75,11 +95,6 @@ public abstract class Voucher {
 
     public void setCost(Cost cost) {
         this.cost = cost;
-    }
-
-    @Override
-    public String toString() {
-        return new StringBuilder().append("Voucher{").append("city='").append(city).append('\'').append(", departureDate=").append(departureDate).append(", numberOfDays=").append(numberOfDays).append(", transport='").append(transport).append('\'').append(", hotel=").append(hotel).append(", cost=").append(cost).append('}').toString();
     }
 
     public class Hotel {
