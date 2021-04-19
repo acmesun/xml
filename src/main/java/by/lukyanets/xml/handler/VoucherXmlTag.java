@@ -3,7 +3,7 @@ package by.lukyanets.xml.handler;
 public enum VoucherXmlTag {
     TOURIST_VOUCHERS("tourist-vouchers"),
     WEEKEND_TOUR("weekend-tour"),
-    VACATION_TOUR("vacation_tour"),
+    VACATION_TOUR("vacation-tour"),
     ID("id"),
     AVERAGE_RATING("average-rating"),
     CITY("city"),
