@@ -18,17 +18,17 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-public class VoucherStaxBuilder {
-    private Set<TouristVoucher> vouchers;
+public class VoucherStaxBuilder extends AbstractVoucherBuilder {
     private XMLInputFactory inputFactory;
 
     public VoucherStaxBuilder() {
-        inputFactory = XMLInputFactory.newInstance();
-        vouchers = new HashSet<>();
+        this(new HashSet<>());
     }
 
-    public Set<TouristVoucher> getVouchers() {
-        return vouchers;
+    public VoucherStaxBuilder(Set<TouristVoucher> vouchers) {
+        super(vouchers);
+        inputFactory = XMLInputFactory.newInstance();
+
     }
 
     public void buildSetVouchers(String fileName) {
@@ -43,7 +43,7 @@ public class VoucherStaxBuilder {
                     if (VoucherXmlTag.VACATION_TOUR == VoucherXmlTag.valueOf(prepareToEnum(name))
                             || VoucherXmlTag.WEEKEND_TOUR == VoucherXmlTag.valueOf(prepareToEnum(name))) {
                         TouristVoucher voucher = buildVoucher(reader);
-                        vouchers.add(voucher);
+                        getVouchers().add(voucher);
                     }
                 }
             }

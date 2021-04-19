@@ -21,12 +21,16 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-public class VoucherDomBuilder {
-    private Set<TouristVoucher> vouchers;
+public class VoucherDomBuilder extends AbstractVoucherBuilder {
+
     private DocumentBuilder docBuilder;
 
     public VoucherDomBuilder() {
-        vouchers = new HashSet<>();
+        this(new HashSet<>());
+    }
+
+    public VoucherDomBuilder(Set<TouristVoucher> vouchers) {
+        super(vouchers);
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             docBuilder = factory.newDocumentBuilder();
@@ -35,10 +39,7 @@ public class VoucherDomBuilder {
         }
     }
 
-    public Set<TouristVoucher> getVouchers() {
-        return vouchers;
-    }
-
+    @Override
     public void buildSetVouchers(String fileName) {
         Document doc;
         try {
@@ -51,7 +52,7 @@ public class VoucherDomBuilder {
                 }
                 Element voucherElement = (Element) vouchersWeekendList.item(i);
                 TouristVoucher voucher = buildVoucher(voucherElement);
-                vouchers.add(voucher);
+                getVouchers().add(voucher);
             }
         } catch (SAXException | IOException e) {
             e.printStackTrace();

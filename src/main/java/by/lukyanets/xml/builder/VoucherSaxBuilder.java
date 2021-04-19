@@ -9,14 +9,19 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Set;
 
-public class VoucherSaxBuilder {
-    private Set<TouristVoucher> vouchers;
+public class VoucherSaxBuilder extends AbstractVoucherBuilder{
     private VoucherHandler handler = new VoucherHandler();
     private XMLReader reader;
 
     public VoucherSaxBuilder() {
+        this(new HashSet<>());
+    }
+
+    public VoucherSaxBuilder(Set<TouristVoucher> vouchers) {
+        super(vouchers);
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             SAXParser saxParser = factory.newSAXParser();
@@ -27,17 +32,14 @@ public class VoucherSaxBuilder {
         reader.setContentHandler(handler);
     }
 
-    public Set<TouristVoucher> getVouchers() {
-        return vouchers;
-    }
-
-    public void buildSetVouchers(String filename) {
+    @Override
+    public void buildSetVouchers(String fileName) {
         try {
-            reader.parse(filename);
+            reader.parse(fileName);
         } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
-        vouchers = handler.getVouchers();
+        setVouchers(handler.getVouchers());
     }
 }
 
