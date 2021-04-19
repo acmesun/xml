@@ -35,7 +35,7 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
         XMLStreamReader reader;
         String name;
         try (FileInputStream input = new FileInputStream(fileName)) {
-            reader = inputFactory.createXMLStreamReader(input);
+             reader = inputFactory.createXMLStreamReader(input);
             while (reader.hasNext()) {
                 int type = reader.next();
                 if (type == XMLStreamConstants.START_ELEMENT) {
