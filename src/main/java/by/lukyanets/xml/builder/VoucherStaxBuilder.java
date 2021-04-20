@@ -7,6 +7,8 @@ import by.lukyanets.xml.entity.TouristVoucher;
 import by.lukyanets.xml.entity.VacationTour;
 import by.lukyanets.xml.entity.WeekendTour;
 import by.lukyanets.xml.handler.VoucherXmlTag;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -19,6 +21,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class VoucherStaxBuilder extends AbstractVoucherBuilder {
+    private final static Logger logger = LogManager.getLogger(VoucherStaxBuilder.class);
     private XMLInputFactory inputFactory;
 
     public VoucherStaxBuilder() {
@@ -28,14 +31,14 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
     public VoucherStaxBuilder(Set<TouristVoucher> vouchers) {
         super(vouchers);
         inputFactory = XMLInputFactory.newInstance();
-
     }
 
     public void buildSetVouchers(String fileName) {
         XMLStreamReader reader;
         String name;
+        logger.info("Trying to read file {}", fileName);
         try (FileInputStream input = new FileInputStream(fileName)) {
-             reader = inputFactory.createXMLStreamReader(input);
+            reader = inputFactory.createXMLStreamReader(input);
             while (reader.hasNext()) {
                 int type = reader.next();
                 if (type == XMLStreamConstants.START_ELEMENT) {
@@ -48,13 +51,14 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
                 }
             }
         } catch (IOException | XMLStreamException e) {
-            e.printStackTrace();
+            logger.error("Exception {}.", e.toString());
         }
     }
 
     private TouristVoucher buildVoucher(XMLStreamReader reader) throws XMLStreamException {
         TouristVoucher voucher = null;
         String localName = reader.getLocalName();
+        logger.info("Create new voucher");
         if (localName.equals(VoucherXmlTag.VACATION_TOUR.getValue())) {
             voucher = new VacationTour();
         } else if (localName.equals(VoucherXmlTag.WEEKEND_TOUR.getValue())) {
@@ -63,6 +67,7 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
         voucher.setId(reader.getAttributeValue(null, VoucherXmlTag.ID.getValue()));
         voucher.setAverageRating(reader.getAttributeValue(null, VoucherXmlTag.AVERAGE_RATING.getValue()));
         String name;
+        logger.info("Parsing start.");
         while (reader.hasNext()) {
             int type = reader.next();
             switch (type) {
@@ -97,7 +102,8 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
                     }
             }
         }
-        throw new XMLStreamException("Unknown element");
+        logger.error("Exception! Unknown element.");
+        throw new XMLStreamException();
     }
 
 
@@ -131,7 +137,8 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
                     }
             }
         }
-        throw new XMLStreamException("Unknown element");
+        logger.error("Exception! Unknown element in cost element.");
+        throw new XMLStreamException();
     }
 
     private TouristVoucher.Hotel getXMLHotelCharacteristic(XMLStreamReader reader, TouristVoucher voucher) throws XMLStreamException {
@@ -179,7 +186,8 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
                     }
             }
         }
-        throw new XMLStreamException("Unknown element");
+        logger.error("Exception! Unknown element in hotel characteristics.");
+        throw new XMLStreamException();
     }
 
     private String getXMLText(XMLStreamReader reader) throws XMLStreamException {

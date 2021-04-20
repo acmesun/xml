@@ -2,6 +2,8 @@ package by.lukyanets.xml.builder;
 
 import by.lukyanets.xml.entity.TouristVoucher;
 import by.lukyanets.xml.handler.VoucherHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
@@ -12,9 +14,10 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class VoucherSaxBuilder extends AbstractVoucherBuilder{
+public class VoucherSaxBuilder extends AbstractVoucherBuilder {
     private VoucherHandler handler = new VoucherHandler();
     private XMLReader reader;
+    private static final Logger logger = LogManager.getLogger(VoucherSaxBuilder.class);
 
     public VoucherSaxBuilder() {
         this(new HashSet<>());
@@ -27,7 +30,8 @@ public class VoucherSaxBuilder extends AbstractVoucherBuilder{
             SAXParser saxParser = factory.newSAXParser();
             reader = saxParser.getXMLReader();
         } catch (SAXException | ParserConfigurationException e) {
-            e.printStackTrace();
+            logger.error("Exception {}", e.toString());
+
         }
         reader.setContentHandler(handler);
     }
@@ -37,7 +41,7 @@ public class VoucherSaxBuilder extends AbstractVoucherBuilder{
         try {
             reader.parse(fileName);
         } catch (SAXException | IOException e) {
-            e.printStackTrace();
+            logger.error("Can not be parse. It's Exception{}", e.toString());
         }
         setVouchers(handler.getVouchers());
     }

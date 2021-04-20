@@ -1,9 +1,9 @@
 package by.lukyanets.xml.entity;
 
 
+import by.lukyanets.xml.data.AccommodationAndMeals;
 import by.lukyanets.xml.data.Currency;
 import by.lukyanets.xml.data.HotelRoom;
-import by.lukyanets.xml.data.AccommodationAndMeals;
 
 import java.time.LocalDate;
 
@@ -239,6 +239,4 @@ public abstract class TouristVoucher {
             this.value = value;
         }
     }
-
-
 }

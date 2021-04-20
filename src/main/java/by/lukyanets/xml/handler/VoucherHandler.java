@@ -6,6 +6,8 @@ import by.lukyanets.xml.data.HotelRoom;
 import by.lukyanets.xml.entity.TouristVoucher;
 import by.lukyanets.xml.entity.VacationTour;
 import by.lukyanets.xml.entity.WeekendTour;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -19,6 +21,7 @@ public class VoucherHandler extends DefaultHandler {
     private TouristVoucher currentVoucher;
     private VoucherXmlTag currentXmlTag;
     private EnumSet<VoucherXmlTag> withText;
+    private static final Logger logger = LogManager.getLogger(VoucherHandler.class);
 
     public VoucherHandler() {
         vouchers = new HashSet<>();
@@ -30,11 +33,11 @@ public class VoucherHandler extends DefaultHandler {
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
-        if (qName.equals("weekend-tour")) {
+        if (qName.equals(VoucherXmlTag.WEEKEND_TOUR.getValue())) {
             currentVoucher = new WeekendTour();
             currentVoucher.setId(attrs.getValue(0));
             currentVoucher.setAverageRating(attrs.getValue(1));
-        } else if (qName.equals("vacation-tour")) {
+        } else if (qName.equals(VoucherXmlTag.VACATION_TOUR.getValue())) {
             currentVoucher = new VacationTour();
             currentVoucher.setId(attrs.getValue(0));
             currentVoucher.setAverageRating(attrs.getValue(1));
