@@ -1,9 +1,9 @@
-package by.lukyanets.xml.entity;
+package by.lukyanets.xmltask.entity;
 
 
-import by.lukyanets.xml.data.AccommodationAndMeals;
-import by.lukyanets.xml.data.Currency;
-import by.lukyanets.xml.data.HotelRoom;
+import by.lukyanets.xmltask.data.AccommodationAndMeals;
+import by.lukyanets.xmltask.data.Currency;
+import by.lukyanets.xmltask.data.HotelRoom;
 
 import java.time.LocalDate;
 

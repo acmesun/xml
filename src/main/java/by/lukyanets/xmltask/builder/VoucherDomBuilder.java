@@ -1,11 +1,11 @@
-package by.lukyanets.xml.builder;
+package by.lukyanets.xmltask.builder;
 
-import by.lukyanets.xml.data.AccommodationAndMeals;
-import by.lukyanets.xml.data.Currency;
-import by.lukyanets.xml.data.HotelRoom;
-import by.lukyanets.xml.entity.TouristVoucher;
-import by.lukyanets.xml.entity.VacationTour;
-import by.lukyanets.xml.entity.WeekendTour;
+import by.lukyanets.xmltask.data.AccommodationAndMeals;
+import by.lukyanets.xmltask.data.Currency;
+import by.lukyanets.xmltask.data.HotelRoom;
+import by.lukyanets.xmltask.entity.TouristVoucher;
+import by.lukyanets.xmltask.entity.VacationTour;
+import by.lukyanets.xmltask.entity.WeekendTour;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
@@ -22,7 +22,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-import static by.lukyanets.xml.handler.VoucherXmlTag.*;
+import static by.lukyanets.xmltask.handler.VoucherXmlTag.*;
 
 public class VoucherDomBuilder extends AbstractVoucherBuilder {
 

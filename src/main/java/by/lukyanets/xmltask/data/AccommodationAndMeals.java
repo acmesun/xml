@@ -1,4 +1,4 @@
-package by.lukyanets.xml.data;
+package by.lukyanets.xmltask.data;
 
 public enum AccommodationAndMeals {
     bb,

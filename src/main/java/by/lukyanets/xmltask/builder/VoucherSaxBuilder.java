@@ -1,7 +1,7 @@
-package by.lukyanets.xml.builder;
+package by.lukyanets.xmltask.builder;
 
-import by.lukyanets.xml.entity.TouristVoucher;
-import by.lukyanets.xml.handler.VoucherHandler;
+import by.lukyanets.xmltask.entity.TouristVoucher;
+import by.lukyanets.xmltask.handler.VoucherHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;

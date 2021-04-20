@@ -1,4 +1,4 @@
-package by.lukyanets.xml.entity;
+package by.lukyanets.xmltask.entity;
 
 import java.time.LocalDate;
 

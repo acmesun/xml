@@ -1,4 +1,4 @@
-package by.lukyanets.xml.handler;
+package by.lukyanets.xmltask.handler;
 
 public enum VoucherXmlTag {
     TOURIST_VOUCHERS("tourist-vouchers"),

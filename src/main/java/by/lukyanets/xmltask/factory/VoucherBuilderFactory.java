@@ -1,9 +1,9 @@
-package by.lukyanets.xml.factory;
+package by.lukyanets.xmltask.factory;
 
-import by.lukyanets.xml.builder.AbstractVoucherBuilder;
-import by.lukyanets.xml.builder.VoucherDomBuilder;
-import by.lukyanets.xml.builder.VoucherSaxBuilder;
-import by.lukyanets.xml.builder.VoucherStaxBuilder;
+import by.lukyanets.xmltask.builder.AbstractVoucherBuilder;
+import by.lukyanets.xmltask.builder.VoucherDomBuilder;
+import by.lukyanets.xmltask.builder.VoucherSaxBuilder;
+import by.lukyanets.xmltask.builder.VoucherStaxBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

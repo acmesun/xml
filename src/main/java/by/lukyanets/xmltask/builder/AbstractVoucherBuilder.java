@@ -1,6 +1,6 @@
-package by.lukyanets.xml.builder;
+package by.lukyanets.xmltask.builder;
 
-import by.lukyanets.xml.entity.TouristVoucher;
+import by.lukyanets.xmltask.entity.TouristVoucher;
 
 import java.util.HashSet;
 import java.util.Set;

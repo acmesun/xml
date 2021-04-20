@@ -1,8 +1,8 @@
-package by.lukyanets.xml;
+package by.lukyanets.xmltask;
 
-import by.lukyanets.xml.builder.AbstractVoucherBuilder;
-import by.lukyanets.xml.entity.TouristVoucher;
-import by.lukyanets.xml.factory.VoucherBuilderFactory;
+import by.lukyanets.xmltask.builder.AbstractVoucherBuilder;
+import by.lukyanets.xmltask.entity.TouristVoucher;
+import by.lukyanets.xmltask.factory.VoucherBuilderFactory;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
