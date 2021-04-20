@@ -20,6 +20,8 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+import static by.lukyanets.xml.handler.VoucherXmlTag.*;
+
 public class VoucherStaxBuilder extends AbstractVoucherBuilder {
     private final static Logger logger = LogManager.getLogger(VoucherStaxBuilder.class);
     private XMLInputFactory inputFactory;
@@ -43,8 +45,8 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
                 int type = reader.next();
                 if (type == XMLStreamConstants.START_ELEMENT) {
                     name = reader.getLocalName();
-                    if (VoucherXmlTag.VACATION_TOUR == VoucherXmlTag.valueOf(prepareToEnum(name))
-                            || VoucherXmlTag.WEEKEND_TOUR == VoucherXmlTag.valueOf(prepareToEnum(name))) {
+                    if (VACATION_TOUR == valueOf(prepareToEnum(name))
+                            || WEEKEND_TOUR == valueOf(prepareToEnum(name))) {
                         TouristVoucher voucher = buildVoucher(reader);
                         getVouchers().add(voucher);
                     }
@@ -59,13 +61,13 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
         TouristVoucher voucher = null;
         String localName = reader.getLocalName();
         logger.info("Create new voucher");
-        if (localName.equals(VoucherXmlTag.VACATION_TOUR.getValue())) {
+        if (localName.equals(VACATION_TOUR.getValue())) {
             voucher = new VacationTour();
-        } else if (localName.equals(VoucherXmlTag.WEEKEND_TOUR.getValue())) {
+        } else if (localName.equals(WEEKEND_TOUR.getValue())) {
             voucher = new WeekendTour();
         }
-        voucher.setId(reader.getAttributeValue(null, VoucherXmlTag.ID.getValue()));
-        voucher.setAverageRating(reader.getAttributeValue(null, VoucherXmlTag.AVERAGE_RATING.getValue()));
+        voucher.setId(reader.getAttributeValue(null, ID.getValue()));
+        voucher.setAverageRating(reader.getAttributeValue(null, AVERAGE_RATING.getValue()));
         String name;
         logger.info("Parsing start.");
         while (reader.hasNext()) {
@@ -73,7 +75,7 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
-                    switch (VoucherXmlTag.valueOf(prepareToEnum(name))) {
+                    switch (valueOf(prepareToEnum(name))) {
                         case CITY:
                             voucher.setCity(reader.getElementText());
                             break;
@@ -97,7 +99,7 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
                     break;
                 case XMLStreamConstants.END_ELEMENT:
                     name = reader.getLocalName();
-                    if (VoucherXmlTag.VACATION_TOUR == VoucherXmlTag.valueOf(prepareToEnum(name)) || VoucherXmlTag.WEEKEND_TOUR == VoucherXmlTag.valueOf(prepareToEnum(name))) {
+                    if (VACATION_TOUR == valueOf(prepareToEnum(name)) || WEEKEND_TOUR == valueOf(prepareToEnum(name))) {
                         return voucher;
                     }
             }
@@ -121,7 +123,7 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
-                    switch ((VoucherXmlTag.valueOf(prepareToEnum(name)))) {
+                    switch ((valueOf(prepareToEnum(name)))) {
                         case CURRENCY:
                             cost.setCurrency(Currency.valueOf(reader.getElementText()));
                             break;
@@ -132,7 +134,7 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
                     break;
                 case XMLStreamConstants.END_ELEMENT:
                     name = reader.getLocalName();
-                    if (VoucherXmlTag.valueOf(name.toUpperCase()) == VoucherXmlTag.COST) {
+                    if (valueOf(name.toUpperCase()) == COST) {
                         return cost;
                     }
             }
@@ -155,7 +157,7 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
-                    switch (VoucherXmlTag.valueOf(prepareToEnum(name))) {
+                    switch (valueOf(prepareToEnum(name))) {
                         case NUMBER_OF_STARS:
                             hotel.setNumberOfStars(Integer.parseInt(getXMLText(reader)));
                             break;
@@ -181,7 +183,7 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
                     break;
                 case XMLStreamConstants.END_ELEMENT:
                     name = reader.getLocalName();
-                    if (VoucherXmlTag.valueOf(prepareToEnum(name)) == VoucherXmlTag.HOTEL_CHARACTERISTIC) {
+                    if (valueOf(prepareToEnum(name)) == HOTEL_CHARACTERISTIC) {
                         return hotel;
                     }
             }

@@ -16,6 +16,8 @@ import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Set;
 
+import static by.lukyanets.xml.handler.VoucherXmlTag.*;
+
 public class VoucherHandler extends DefaultHandler {
     private Set<TouristVoucher> vouchers;
     private TouristVoucher currentVoucher;
@@ -25,7 +27,7 @@ public class VoucherHandler extends DefaultHandler {
 
     public VoucherHandler() {
         vouchers = new HashSet<>();
-        withText = EnumSet.range(VoucherXmlTag.CITY, VoucherXmlTag.VALUE);
+        withText = EnumSet.range(CITY, VALUE);
     }
 
     public Set<TouristVoucher> getVouchers() {
@@ -33,30 +35,34 @@ public class VoucherHandler extends DefaultHandler {
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
-        if (qName.equals(VoucherXmlTag.WEEKEND_TOUR.getValue())) {
+        if (qName.equals(WEEKEND_TOUR.getValue())) {
             currentVoucher = new WeekendTour();
-            currentVoucher.setId(attrs.getValue(0));
-            currentVoucher.setAverageRating(attrs.getValue(1));
-        } else if (qName.equals(VoucherXmlTag.VACATION_TOUR.getValue())) {
+            setAttributes(attrs);
+        } else if (qName.equals(VACATION_TOUR.getValue())) {
             currentVoucher = new VacationTour();
-            currentVoucher.setId(attrs.getValue(0));
-            currentVoucher.setAverageRating(attrs.getValue(1));
+            setAttributes(attrs);
         } else {
-            VoucherXmlTag temp = VoucherXmlTag.valueOf(qName.toUpperCase().replace('-', '_'));
+            VoucherXmlTag temp = valueOf(qName.toUpperCase().replace('-', '_'));
             if (withText.contains(temp)) {
                 currentXmlTag = temp;
             }
         }
     }
 
+    private void setAttributes(Attributes attrs) {
+        currentVoucher.setId(attrs.getValue(0));
+        currentVoucher.setAverageRating(attrs.getValue(1));
+    }
+
     public void endElement(String uri, String localName, String qName) {
-        if (qName.equals("weekend-tour") || qName.equals("vacation-tour")) {
+        if (qName.equals(WEEKEND_TOUR.getValue()) || qName.equals(VACATION_TOUR.getValue())) {
             vouchers.add(currentVoucher);
         }
     }
 
     public void characters(char[] ch, int start, int length) {
         String data = new String(ch, start, length);
+        logger.warn("Current tag can not be null.");
         if (currentXmlTag != null) {
             switch (currentXmlTag) {
                 case CITY:
@@ -100,9 +106,10 @@ public class VoucherHandler extends DefaultHandler {
                     break;
                 case COST:
                 case HOTEL_CHARACTERISTIC:
-                    // Do nothing
+                    logger.info("Set cost and hotel characteristics.");
                     break;
                 default:
+                    logger.error("There is mo such constant in enum.");
                     throw new EnumConstantNotPresentException(currentXmlTag.getDeclaringClass(), currentXmlTag.name());
             }
         }
