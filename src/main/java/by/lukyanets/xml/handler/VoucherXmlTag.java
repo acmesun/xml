@@ -24,7 +24,7 @@ public enum VoucherXmlTag {
     BIKE_TOUR("bike-tour"),
     VISA("visa");
 
-    private String value;
+    private final String value;
 
     VoucherXmlTag(String value) {
         this.value = value;

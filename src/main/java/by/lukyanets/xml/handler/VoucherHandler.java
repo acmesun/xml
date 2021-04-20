@@ -19,10 +19,10 @@ import java.util.Set;
 import static by.lukyanets.xml.handler.VoucherXmlTag.*;
 
 public class VoucherHandler extends DefaultHandler {
-    private Set<TouristVoucher> vouchers;
+    private final Set<TouristVoucher> vouchers;
+    private final EnumSet<VoucherXmlTag> withText;
     private TouristVoucher currentVoucher;
     private VoucherXmlTag currentXmlTag;
-    private EnumSet<VoucherXmlTag> withText;
     private static final Logger logger = LogManager.getLogger(VoucherHandler.class);
 
     public VoucherHandler() {

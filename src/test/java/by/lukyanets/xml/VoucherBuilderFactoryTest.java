@@ -15,8 +15,7 @@ import static java.util.stream.Collectors.toSet;
 import static org.testng.Assert.assertEquals;
 
 public class VoucherBuilderFactoryTest {
-    private AbstractVoucherBuilder builder;
-    private final String fileName = "voucher.xml";
+    private static final String FILE_NAME = "voucher.xml";
 
     @Test
     public void domParserTest() throws IOException {
@@ -38,8 +37,8 @@ public class VoucherBuilderFactoryTest {
     }
 
     private void voucherParsingTest(String type, String expectedFile) throws IOException {
-        builder = VoucherBuilderFactory.createVoucherBuilder(type);
-        builder.buildSetVouchers(getFullFilePath(fileName));
+        AbstractVoucherBuilder builder = VoucherBuilderFactory.createVoucherBuilder(type);
+        builder.buildSetVouchers(getFullFilePath(FILE_NAME));
         Set<String> actual = builder.getVouchers().stream().map(TouristVoucher::toString).collect(toSet());
         Set<String> expected = Arrays.stream(getFileText(expectedFile)
                 .split("\r\n"))

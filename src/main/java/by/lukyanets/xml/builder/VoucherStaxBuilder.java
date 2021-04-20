@@ -24,7 +24,7 @@ import static by.lukyanets.xml.handler.VoucherXmlTag.*;
 
 public class VoucherStaxBuilder extends AbstractVoucherBuilder {
     private final static Logger logger = LogManager.getLogger(VoucherStaxBuilder.class);
-    private XMLInputFactory inputFactory;
+    private final XMLInputFactory inputFactory;
 
     public VoucherStaxBuilder() {
         this(new HashSet<>());
@@ -58,13 +58,16 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
     }
 
     private TouristVoucher buildVoucher(XMLStreamReader reader) throws XMLStreamException {
-        TouristVoucher voucher = null;
+        TouristVoucher voucher;
         String localName = reader.getLocalName();
         logger.info("Create new voucher");
         if (localName.equals(VACATION_TOUR.getValue())) {
             voucher = new VacationTour();
         } else if (localName.equals(WEEKEND_TOUR.getValue())) {
             voucher = new WeekendTour();
+        } else {
+            logger.error("Tourist voucher can not be null.");
+            throw new IllegalStateException();
         }
         voucher.setId(reader.getAttributeValue(null, ID.getValue()));
         voucher.setAverageRating(reader.getAttributeValue(null, AVERAGE_RATING.getValue()));
@@ -110,11 +113,14 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
 
 
     private TouristVoucher.Cost getXMLCost(XMLStreamReader reader, TouristVoucher voucher) throws XMLStreamException {
-        TouristVoucher.Cost cost = null;
+        TouristVoucher.Cost cost;
         if (voucher instanceof WeekendTour) {
             cost = new WeekendTour().new Cost();
         } else if (voucher instanceof VacationTour) {
             cost = new VacationTour().new Cost();
+        } else {
+            logger.error("Cost can not be null.");
+            throw new IllegalStateException();
         }
         int type;
         String name;
@@ -144,11 +150,14 @@ public class VoucherStaxBuilder extends AbstractVoucherBuilder {
     }
 
     private TouristVoucher.Hotel getXMLHotelCharacteristic(XMLStreamReader reader, TouristVoucher voucher) throws XMLStreamException {
-        TouristVoucher.Hotel hotel = null;
+        TouristVoucher.Hotel hotel;
         if (voucher instanceof WeekendTour) {
             hotel = new WeekendTour().new Hotel();
         } else if (voucher instanceof VacationTour) {
             hotel = new VacationTour().new Hotel();
+        } else {
+            logger.error("Hotel can not be null.");
+            throw new IllegalStateException();
         }
         int type;
         String name;

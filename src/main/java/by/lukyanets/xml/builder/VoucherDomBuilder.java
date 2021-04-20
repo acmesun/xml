@@ -66,11 +66,14 @@ public class VoucherDomBuilder extends AbstractVoucherBuilder {
 
     private TouristVoucher buildVoucher(Element voucherElement) {
         logger.error(" Check and Creation new voucher.");
-        TouristVoucher voucher = null;
+        TouristVoucher voucher;
         if (voucherElement.getTagName().equals(WEEKEND_TOUR.getValue())) {
             voucher = new WeekendTour();
         } else if (voucherElement.getTagName().equals(VACATION_TOUR.getValue())) {
             voucher = new VacationTour();
+        } else {
+            logger.error("Tourist voucher can not be null.");
+            throw new IllegalStateException();
         }
         logger.info("Parsing start.");
         voucher.setId(voucherElement.getAttribute(ID.getValue()));
